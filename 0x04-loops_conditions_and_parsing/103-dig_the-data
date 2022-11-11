@@ -3,8 +3,4 @@
 #   Groups visitors by IP and HTTP status code.
 #   Displays the number of occurrences, IP, and HTTP status
 #+  code of each log, in sorted order.
-
-file_name="apache-access.log"
-if test -f $file_name; then
-  awk '{print $1,$9}' $file_name | sort | uniq -c | sort -gr
-fi
+awk -F' ' '{ print $1 " " $9 }' apache-access.log | sort | uniq -c | sort -nr
