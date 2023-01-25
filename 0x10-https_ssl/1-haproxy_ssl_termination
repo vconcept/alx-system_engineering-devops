@@ -44,7 +44,7 @@ frontend argondx-frontend-https
   http-request set-header X-Forwarded-Proto https
   default_backend argondx-backend
 
-backend ehoneah-backend
+backend argondx-backend
         balance roundrobin
         server 87883-web-01 54.236.51.160:80 check
         server 87883-web-02 100.24.240.34:80 check
